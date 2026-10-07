@@ -1,0 +1,1462 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   ROOT THEME - DARK MODE
+   DO NOT CHANGE DARK MODE COLORS
+   ========================================================= */
+
+:root {
+  /* Premium Palette - Deep Blue Ocean Theme */
+  --color-primary: #0b8ff3;
+  --color-primary-dark: #0056b3;
+  --color-secondary: #6366f1;
+  --color-accent: #f43f5e;
+
+  --bg-dark: #0f172a;
+  --bg-darker: #020617;
+  --bg-card: rgba(30, 41, 59, 0.4);
+  --bg-card-hover: rgba(51, 65, 85, 0.6);
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-light: #e2e8f0;
+
+  --border-light: rgba(255, 255, 255, 0.1);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+
+  --bg-glass-panel: rgba(20, 25, 40, 0.7);
+  --border-glass-panel: 1px solid rgba(255, 255, 255, 0.08);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.2),
+    0 2px 4px -1px rgba(0, 0, 0, 0.1);
+
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.15);
+
+  --shadow-glass:
+    0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  /* Animation */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease-in-out;
+
+  /* Components defaults - Dark */
+  --bg-modal: #1e1e24;
+
+  --bg-input: rgba(0, 0, 0, 0.3);
+  --bg-input-focus: rgba(0, 0, 0, 0.4);
+
+  --border-input: rgba(255, 255, 255, 0.1);
+  --border-modal: rgba(255, 255, 255, 0.1);
+
+  --text-button: #e2e8f0;
+  --border-button: rgba(255, 255, 255, 0.15);
+  --bg-button-hover: rgba(255, 255, 255, 0.05);
+
+  /* Sidebar - Dark */
+  --bg-sidebar: rgba(15, 23, 42, 0.6);
+  --sidebar-text: var(--text-muted);
+  --sidebar-hover-bg: rgba(255, 255, 255, 0.05);
+  --sidebar-hover-text: var(--text-light);
+
+  --sidebar-active-bg:
+    linear-gradient(
+      90deg,
+      rgba(11, 143, 243, 0.15),
+      rgba(99, 102, 241, 0.05)
+    );
+
+  --sidebar-active-text: var(--color-primary);
+  --sidebar-active-border: rgba(11, 143, 243, 0.2);
+
+  /* Dark Background Image */
+  --bg-image:
+    radial-gradient(
+      at 0% 0%,
+      rgba(99, 102, 241, 0.15) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 100% 0%,
+      rgba(11, 143, 243, 0.15) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 100% 100%,
+      rgba(244, 63, 94, 0.1) 0px,
+      transparent 50%
+    );
+
+  /* Dark Opaque Components */
+  --bg-opaque-slate: rgba(15, 23, 42, 0.95);
+  --bg-opaque-slate-dark: rgba(15, 23, 42, 0.85);
+  --bg-opaque-slate-mid: rgba(15, 23, 42, 0.65);
+  --bg-opaque-slate-light: rgba(15, 23, 42, 0.6);
+
+  --bg-control-center: rgba(15, 23, 42, 0.8);
+  --bg-merkle: rgba(0, 0, 0, 0.2);
+
+  --bg-row-hover: rgba(255, 255, 255, 0.02);
+  --bg-row-striped: rgba(255, 255, 255, 0.01);
+
+  /* Fallback aliases */
+  --primary: var(--color-primary);
+  --border: var(--border-light);
+  --text: var(--text-main);
+  --muted: var(--text-muted);
+  --bg: var(--bg-darker);
+}
+
+
+/* =========================================================
+   LIGHT MODE
+   PALETTE:
+   #E8ECEF - Platinum
+   #C4D8E5 - Light Blue Grey
+   #A7C7E7 - Baby Blue Eyes
+   #8EB1D1 - Cool Cerulean
+   #1C2B48 - Midnight Blue
+   ========================================================= */
+
+.light-theme {
+
+  /* -------------------------------------------------------
+     BRAND COLORS (Matched to Reference Dashboard Image)
+     ------------------------------------------------------- */
+
+  --color-primary: #0084ff;
+  --color-primary-dark: #0066cc;
+  --color-secondary: #3b82f6;
+  --color-accent: #0084ff;
+
+
+  /* -------------------------------------------------------
+     MAIN BACKGROUNDS
+     ------------------------------------------------------- */
+
+  /* Main page background */
+  --bg-darker: #f0f4f8;
+
+  /* Secondary background */
+  --bg-dark: #e8eef5;
+
+  /* Cards - Crisp Clean White */
+  --bg-card: #ffffff;
+
+  /* Hover */
+  --bg-card-hover: #f8fafc;
+
+
+  /* -------------------------------------------------------
+     TEXT
+     ------------------------------------------------------- */
+
+  --text-main: #0f172a;
+
+  --text-muted: #64748b;
+
+  --text-light: #334155;
+
+
+  /* -------------------------------------------------------
+     BORDERS
+     ------------------------------------------------------- */
+
+  --border-light: #e2e8f0;
+
+  --glass-border: 1px solid #e2e8f0;
+
+
+  /* -------------------------------------------------------
+     GLASS PANEL
+     ------------------------------------------------------- */
+
+  --bg-glass-panel: #ffffff;
+
+  --border-glass-panel: 1px solid #e2e8f0;
+
+
+  /* -------------------------------------------------------
+     SHADOWS
+     ------------------------------------------------------- */
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.06),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.08),
+    0 4px 6px -2px rgba(0, 0, 0, 0.03);
+
+  --shadow-glass: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+
+  /* -------------------------------------------------------
+     MODAL
+     ------------------------------------------------------- */
+
+  --bg-modal: #ffffff;
+
+  --border-modal: #e2e8f0;
+
+
+  /* -------------------------------------------------------
+     INPUTS
+     ------------------------------------------------------- */
+
+  --bg-input: #ffffff;
+
+  --bg-input-focus: #ffffff;
+
+  --border-input: #cbd5e1;
+
+
+  /* -------------------------------------------------------
+     BUTTONS
+     ------------------------------------------------------- */
+
+  --text-button: #ffffff;
+
+  --border-button: transparent;
+
+  --bg-button-hover: #0066cc;
+
+
+  /* -------------------------------------------------------
+     SIDEBAR
+     ------------------------------------------------------- */
+
+  --bg-sidebar: #ffffff;
+
+  --sidebar-text: #64748b;
+
+  --sidebar-hover-bg: #f1f5f9;
+
+  --sidebar-hover-text: #0f172a;
+
+  --sidebar-active-bg: #e6f0fa;
+
+  --sidebar-active-text: #0084ff;
+
+  --sidebar-active-border: #0084ff;
+
+
+  /* -------------------------------------------------------
+     LIGHT MODE MUST HAVE NO PAGE-WIDE GRADIENT
+     ------------------------------------------------------- */
+
+  --bg-image: none;
+
+
+  /* -------------------------------------------------------
+     OPAQUE COMPONENTS
+     ------------------------------------------------------- */
+
+  --bg-opaque-slate: #ffffff;
+
+  --bg-opaque-slate-dark: #f8fafc;
+
+  --bg-opaque-slate-mid: #ffffff;
+
+  --bg-opaque-slate-light: #f1f5f9;
+
+  --bg-control-center: #ffffff;
+
+  --bg-merkle: #f8fafc;
+
+
+  /* -------------------------------------------------------
+     TABLE ROWS
+     ------------------------------------------------------- */
+
+  --bg-row-hover: #f1f5f9;
+
+  --bg-row-striped: #f8fafc;
+
+
+  /* -------------------------------------------------------
+     FALLBACK ALIASES
+     ------------------------------------------------------- */
+
+  --primary: var(--color-primary);
+
+  --border: var(--border-light);
+
+  --text: var(--text-main);
+
+  --muted: var(--text-muted);
+
+  --bg: var(--bg-darker);
+}
+
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================================
+   HTML / BODY
+   ========================================================= */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+
+  font-family: 'Inter', sans-serif;
+
+  background-color: var(--bg-darker);
+
+  background-image: var(--bg-image);
+
+  background-attachment: fixed;
+
+  color: var(--text-main);
+
+  -webkit-font-smoothing: antialiased;
+
+  overflow-x: hidden;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================================
+   LIGHT MODE BODY
+   IMPORTANT:
+   NO BLUE / CYAN PAGE-WIDE GRADIENT
+   ========================================================= */
+
+body.light-theme,
+.light-theme body {
+  background-color: #f0f4f8 !important;
+
+  background-image: none !important;
+
+  color: #0f172a;
+}
+
+
+/* =========================================================
+   LIGHT MODE ROOT
+   ========================================================= */
+
+.light-theme {
+  background-color: #f0f4f8;
+  background-image: none;
+  color: #0f172a;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-card-hover);
+
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+
+/* =========================================================
+   LIGHT MODE SCROLLBAR
+   ========================================================= */
+
+.light-theme ::-webkit-scrollbar-track {
+  background: #f0f4f8;
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.6;
+
+  color: var(--text-light);
+
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-primary);
+
+  text-decoration: none;
+
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+
+/* =========================================================
+   LIGHT MODE TYPOGRAPHY
+   ========================================================= */
+
+.light-theme h1,
+.light-theme h2,
+.light-theme h3,
+.light-theme h4,
+.light-theme h5,
+.light-theme h6 {
+  color: #0f172a;
+}
+
+.light-theme p {
+  color: #475569;
+}
+
+.light-theme label {
+  color: #334155;
+}
+
+.light-theme span {
+  color: inherit;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+button {
+  font-family: 'Inter', sans-serif;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   GLASS PANEL
+   ========================================================= */
+
+.glass-panel {
+  background: var(--bg-glass-panel);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  border: var(--border-glass-panel);
+
+  border-radius: 12px;
+
+  box-shadow: var(--shadow-glass);
+
+  margin-bottom: 30px;
+
+  transition:
+    background 0.3s ease,
+    border 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease;
+}
+
+.glass-panel:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   LIGHT MODE GLASS PANEL
+   ========================================================= */
+
+.light-theme .glass-panel {
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  color: #0f172a;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   GLASS INPUT
+   ========================================================= */
+
+.glass-input {
+  background: var(--bg-input);
+
+  border: 1px solid var(--border-input);
+
+  color: var(--text-main);
+
+  padding: 12px 16px;
+
+  border-radius: 8px;
+
+  width: 100%;
+
+  outline: none;
+
+  transition: var(--transition-fast);
+}
+
+.glass-input::placeholder {
+  color: var(--text-muted);
+}
+
+.glass-input:focus {
+  border-color: var(--color-primary);
+
+  background: var(--bg-input-focus);
+
+  box-shadow:
+    0 0 0 2px rgba(11, 143, 243, 0.2);
+}
+
+
+/* =========================================================
+   LIGHT MODE GLASS INPUT
+   ========================================================= */
+
+.light-theme .glass-input {
+  background: #ffffff;
+
+  border: 1px solid #cbd5e1;
+
+  color: #0f172a;
+}
+
+.light-theme .glass-input::placeholder {
+  color: #94a3b8;
+}
+
+.light-theme .glass-input:focus {
+  background: #ffffff;
+
+  border-color: #0084ff;
+
+  color: #0f172a;
+
+  box-shadow: 0 0 0 3px rgba(0, 132, 255, 0.15);
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.btn-primary {
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-primary) 0%,
+      var(--color-secondary) 100%
+    );
+
+  color: white;
+
+  border: none;
+
+  padding: 12px 24px;
+
+  border-radius: 8px;
+
+  font-weight: 500;
+
+  transition: var(--transition-fast);
+
+  box-shadow:
+    0 4px 6px -1px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 15px -3px rgba(99, 102, 241, 0.4);
+}
+
+
+/* =========================================================
+   LIGHT MODE PRIMARY BUTTON
+   ========================================================= */
+
+.light-theme .btn-primary {
+  background:
+    linear-gradient(
+      135deg,
+      #8EB1D1 0%,
+      #A7C7E7 100%
+    );
+
+  color: #1C2B48;
+
+  border: 1px solid #8EB1D1;
+
+  box-shadow:
+    0 4px 10px rgba(28, 43, 72, 0.15);
+}
+
+.light-theme .btn-primary:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #A7C7E7 0%,
+      #8EB1D1 100%
+    );
+
+  color: #1C2B48;
+
+  box-shadow:
+    0 8px 18px rgba(28, 43, 72, 0.20);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+   ========================================================= */
+
+.btn-secondary {
+  background: transparent;
+
+  color: var(--text-light);
+
+  border: 1px solid var(--border-light);
+
+  padding: 12px 24px;
+
+  border-radius: 8px;
+
+  font-weight: 500;
+
+  transition: var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+
+  color: var(--text-main);
+
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================================
+   LIGHT MODE SECONDARY BUTTON
+   ========================================================= */
+
+.light-theme .btn-secondary {
+  background: transparent;
+
+  color: #1C2B48;
+
+  border: 1px solid #8EB1D1;
+}
+
+.light-theme .btn-secondary:hover {
+  background: #A7C7E7;
+
+  color: #1C2B48;
+
+  border-color: #8EB1D1;
+}
+
+
+/* =========================================================
+   TEXT GRADIENT
+   ========================================================= */
+
+.text-gradient {
+  background:
+    linear-gradient(
+      135deg,
+      #60a5fa 0%,
+      #a78bfa 100%
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+
+/* =========================================================
+   LIGHT MODE TEXT GRADIENT
+   ========================================================= */
+
+.light-theme .text-gradient {
+  background:
+    linear-gradient(
+      135deg,
+      #26658C 0%,
+      #8EB1D1 100%
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+
+/* =========================================================
+   FLEX CENTER
+   ========================================================= */
+
+.flex-center {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   PAGE CONTAINER
+   ========================================================= */
+
+.page-container {
+  padding: 2rem;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   LIGHT MODE SIDEBAR
+   ========================================================= */
+
+.light-theme .sidebar {
+  background: #C4D8E5;
+
+  color: #1C2B48;
+
+  border-color: #8EB1D1;
+}
+
+.light-theme .sidebar a {
+  color: #1C2B48;
+}
+
+.light-theme .sidebar a:hover {
+  background: #A7C7E7;
+
+  color: #1C2B48;
+}
+
+.light-theme .sidebar .active,
+.light-theme .sidebar .active-item {
+  background: #8EB1D1;
+
+  color: #1C2B48;
+
+  border-color: #8EB1D1;
+}
+
+
+/* =========================================================
+   LIGHT MODE SIDEBAR VARIABLES
+   These can also be used by separate Sidebar.css
+   ========================================================= */
+
+.light-theme {
+  --bg-sidebar: #C4D8E5;
+
+  --sidebar-text: #1C2B48;
+
+  --sidebar-hover-bg: #A7C7E7;
+
+  --sidebar-hover-text: #1C2B48;
+
+  --sidebar-active-bg: #8EB1D1;
+
+  --sidebar-active-text: #1C2B48;
+
+  --sidebar-active-border: #8EB1D1;
+}
+
+
+/* =========================================================
+   LIGHT MODE TABLES
+   ========================================================= */
+
+.light-theme table {
+  background: #E8ECEF;
+
+  color: #1C2B48;
+
+  border-color: #8EB1D1;
+}
+
+.light-theme thead {
+  background: #1C2B48;
+
+  color: #E8ECEF;
+}
+
+.light-theme thead th {
+  background: #1C2B48;
+
+  color: #E8ECEF;
+
+  border-color: #8EB1D1;
+}
+
+.light-theme tbody tr {
+  background: #C4D8E5;
+
+  color: #1C2B48;
+
+  border-color: #8EB1D1;
+}
+
+.light-theme tbody tr:nth-child(even) {
+  background: #D4E2E9;
+}
+
+.light-theme tbody tr:hover {
+  background: #A7C7E7;
+}
+
+.light-theme tbody td {
+  color: #1C2B48;
+
+  border-color: rgba(142, 177, 209, 0.55);
+}
+
+
+/* =========================================================
+   LIGHT MODE CARDS
+   ========================================================= */
+
+.light-theme .card,
+.light-theme .dashboard-card,
+.light-theme .property-card,
+.light-theme .stat-card {
+  background: #A7C7E7;
+
+  color: #1C2B48;
+
+  border: 1px solid #8EB1D1;
+
+  box-shadow:
+    0 5px 15px rgba(28, 43, 72, 0.12);
+}
+
+.light-theme .card h1,
+.light-theme .card h2,
+.light-theme .card h3,
+.light-theme .card h4,
+.light-theme .card h5,
+.light-theme .card h6,
+.light-theme .dashboard-card h1,
+.light-theme .dashboard-card h2,
+.light-theme .dashboard-card h3,
+.light-theme .dashboard-card h4,
+.light-theme .dashboard-card h5,
+.light-theme .dashboard-card h6,
+.light-theme .property-card h1,
+.light-theme .property-card h2,
+.light-theme .property-card h3,
+.light-theme .property-card h4,
+.light-theme .property-card h5,
+.light-theme .property-card h6,
+.light-theme .stat-card h1,
+.light-theme .stat-card h2,
+.light-theme .stat-card h3,
+.light-theme .stat-card h4,
+.light-theme .stat-card h5,
+.light-theme .stat-card h6 {
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE MODALS
+   ========================================================= */
+
+.light-theme .modal,
+.light-theme .modal-content,
+.light-theme .modal-container {
+  background: #E8ECEF;
+
+  color: #1C2B48;
+
+  border: 1px solid #8EB1D1;
+
+  box-shadow:
+    0 15px 40px rgba(28, 43, 72, 0.20);
+}
+
+.light-theme .modal h1,
+.light-theme .modal h2,
+.light-theme .modal h3,
+.light-theme .modal h4,
+.light-theme .modal h5,
+.light-theme .modal h6,
+.light-theme .modal-content h1,
+.light-theme .modal-content h2,
+.light-theme .modal-content h3,
+.light-theme .modal-content h4,
+.light-theme .modal-content h5,
+.light-theme .modal-content h6 {
+  color: #1C2B48;
+}
+
+.light-theme .modal p,
+.light-theme .modal-content p {
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE LINKS
+   ========================================================= */
+
+.light-theme a {
+  color: #1C2B48;
+}
+
+.light-theme a:hover {
+  color: #8EB1D1;
+}
+
+
+/* =========================================================
+   LIGHT MODE INPUT / SELECT / TEXTAREA
+   ========================================================= */
+
+.light-theme input,
+.light-theme select,
+.light-theme textarea {
+  background: #C4D8E5;
+
+  color: #1C2B48;
+
+  border:
+    1px solid #8EB1D1;
+}
+
+.light-theme input::placeholder,
+.light-theme textarea::placeholder {
+  color: rgba(28, 43, 72, 0.65);
+}
+
+.light-theme input:focus,
+.light-theme select:focus,
+.light-theme textarea:focus {
+  background: #E8ECEF;
+
+  color: #1C2B48;
+
+  border-color: #8EB1D1;
+
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px rgba(142, 177, 209, 0.25);
+}
+
+
+/* =========================================================
+   LIGHT MODE DROPDOWNS
+   ========================================================= */
+
+.light-theme select option {
+  background: #E8ECEF;
+
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE CHECKBOX / RADIO
+   ========================================================= */
+
+.light-theme input[type="checkbox"],
+.light-theme input[type="radio"] {
+  accent-color: #8EB1D1;
+}
+
+
+/* =========================================================
+   LIGHT MODE LABELS
+   ========================================================= */
+
+.light-theme label {
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE STATUS / BADGES
+   ========================================================= */
+
+.light-theme .success,
+.light-theme .success-badge,
+.light-theme .info,
+.light-theme .info-badge {
+  background: #A7C7E7;
+
+  color: #1C2B48;
+
+  border: 1px solid #8EB1D1;
+}
+
+
+/* =========================================================
+   LIGHT MODE PAGINATION
+   ========================================================= */
+
+.light-theme .pagination button {
+  background: #C4D8E5;
+
+  color: #1C2B48;
+
+  border: 1px solid #8EB1D1;
+}
+
+.light-theme .pagination button:hover {
+  background: #A7C7E7;
+
+  color: #1C2B48;
+}
+
+.light-theme .pagination .active {
+  background: #8EB1D1;
+
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE TABS
+   ========================================================= */
+
+.light-theme .tab {
+  color: #1C2B48;
+
+  border-color: #8EB1D1;
+}
+
+.light-theme .tab:hover {
+  background: #A7C7E7;
+
+  color: #1C2B48;
+}
+
+.light-theme .tab.active {
+  background: #8EB1D1;
+
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE SEARCH
+   ========================================================= */
+
+.light-theme .search-input,
+.light-theme .search-box {
+  background: #C4D8E5;
+
+  color: #1C2B48;
+
+  border: 1px solid #8EB1D1;
+}
+
+.light-theme .search-input::placeholder,
+.light-theme .search-box::placeholder {
+  color: rgba(28, 43, 72, 0.65);
+}
+
+
+/* =========================================================
+   LIGHT MODE FOCUS
+   ========================================================= */
+
+.light-theme button:focus-visible,
+.light-theme input:focus-visible,
+.light-theme select:focus-visible,
+.light-theme textarea:focus-visible {
+  outline: 2px solid #8EB1D1;
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   LIGHT MODE DISABLED
+   ========================================================= */
+
+.light-theme button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   LIGHT MODE SELECTION
+   ========================================================= */
+
+.light-theme ::selection {
+  background: #A7C7E7;
+
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE OVERLAY
+   ========================================================= */
+
+.light-theme .modal-overlay,
+.light-theme .overlay {
+  background: rgba(28, 43, 72, 0.35);
+}
+
+
+/* =========================================================
+   LIGHT MODE TOOLTIPS
+   ========================================================= */
+
+.light-theme .tooltip {
+  background: #1C2B48;
+
+  color: #E8ECEF;
+
+  border: 1px solid #8EB1D1;
+}
+
+
+/* =========================================================
+   LIGHT MODE ALERTS
+   ========================================================= */
+
+.light-theme .alert,
+.light-theme .notification {
+  background: #C4D8E5;
+
+  color: #1C2B48;
+
+  border: 1px solid #8EB1D1;
+}
+
+
+/* =========================================================
+   LIGHT MODE ICONS
+   ========================================================= */
+
+.light-theme .icon {
+  color: #1C2B48;
+}
+
+.light-theme .icon-primary {
+  color: #8EB1D1;
+}
+
+
+/* =========================================================
+   LIGHT MODE TEXT UTILITIES
+   ========================================================= */
+
+.light-theme .text-main {
+  color: #1C2B48;
+}
+
+.light-theme .text-light {
+  color: #1C2B48;
+}
+
+.light-theme .text-muted {
+  color: rgba(28, 43, 72, 0.70);
+}
+
+
+/* =========================================================
+   LIGHT MODE BACKGROUND UTILITIES
+   ========================================================= */
+
+.light-theme .bg-main {
+  background: #E8ECEF;
+}
+
+.light-theme .bg-secondary {
+  background: #C4D8E5;
+}
+
+.light-theme .bg-card {
+  background: #A7C7E7;
+}
+
+
+/* =========================================================
+   LIGHT MODE BORDERS
+   ========================================================= */
+
+.light-theme .border,
+.light-theme .border-light {
+  border-color: #8EB1D1;
+}
+
+
+/* =========================================================
+   LIGHT MODE DARK COMPONENT OVERRIDE
+   Prevent common dark backgrounds from leaking into
+   Light Mode components.
+   ========================================================= */
+
+.light-theme .dark-bg,
+.light-theme .dark-panel,
+.light-theme .dark-card {
+  background: #C4D8E5;
+
+  color: #1C2B48;
+
+  border-color: #8EB1D1;
+}
+
+
+/* =========================================================
+   THEME TRANSITIONS
+   ========================================================= */
+
+body,
+.glass-panel,
+.glass-input,
+.btn-primary,
+.btn-secondary,
+.card,
+.dashboard-card,
+.property-card,
+.stat-card,
+.modal,
+.modal-content,
+input,
+select,
+textarea,
+table {
+  transition:
+    background-color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================================================
+   LIGHT MODE DASHBOARD CARDS & WIDGETS OVERRIDES
+   ========================================================= */
+
+/* Stat cards, graph cards, info panels inside dashboard views - Clean White */
+.light-theme .manager-dashboard .stats-grid .glass-panel,
+.light-theme .manager-dashboard .charts-grid .glass-panel,
+.light-theme .manager-dashboard .dashboard-grid .dashboard-card,
+.light-theme .finance-dashboard .stats-row .stat-card,
+.light-theme .finance-dashboard .charts-row .chart-card,
+.light-theme .finance-dashboard .bottom-row .chart-card,
+.light-theme .agent-dashboard .glass-panel,
+.light-theme .admin-dashboard .glass-panel,
+.light-theme .admin-dashboard .stat-card,
+.light-theme .admin-dashboard .chart-card,
+.light-theme .user-dashboard .glass-panel,
+.light-theme .user-dashboard .dashboard-card {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Ensure headers and text inside dashboard panels match crisp slate */
+.light-theme .manager-dashboard .stats-grid .glass-panel *:not(input):not(select):not(option):not(button),
+.light-theme .manager-dashboard .charts-grid .glass-panel *:not(input):not(select):not(option):not(button),
+.light-theme .manager-dashboard .dashboard-grid .dashboard-card *:not(input):not(select):not(option):not(button),
+.light-theme .finance-dashboard .stats-row .stat-card *:not(input):not(select):not(option):not(button),
+.light-theme .finance-dashboard .charts-row .chart-card *:not(input):not(select):not(option):not(button),
+.light-theme .finance-dashboard .bottom-row .chart-card *:not(input):not(select):not(option):not(button),
+.light-theme .admin-dashboard .glass-panel *:not(input):not(select):not(option):not(button):not(a),
+.light-theme .admin-dashboard .stat-card *:not(input):not(select):not(option):not(button):not(a),
+.light-theme .admin-dashboard .chart-card *:not(input):not(select):not(option):not(button):not(a),
+.light-theme .user-dashboard .glass-panel *:not(input):not(select):not(option):not(button):not(a),
+.light-theme .user-dashboard .dashboard-card *:not(input):not(select):not(option):not(button):not(a) {
+  color: #0f172a !important;
+}
+
+/* Fix Card Icon Wrapper colors in Light Mode Dashboards */
+.light-theme .manager-dashboard .card-icon-wrapper,
+.light-theme .agent-dashboard .card-icon-wrapper,
+.light-theme .finance-dashboard .card-icon-wrapper,
+.light-theme .admin-dashboard .card-icon-wrapper,
+.light-theme .user-dashboard .card-icon-wrapper {
+  color: #0084ff !important;
+  background: #e6f0fa !important;
+}
+
+.light-theme .manager-dashboard .card-icon-wrapper svg,
+.light-theme .agent-dashboard .card-icon-wrapper svg,
+.light-theme .finance-dashboard .card-icon-wrapper svg,
+.light-theme .admin-dashboard .card-icon-wrapper svg,
+.light-theme .user-dashboard .card-icon-wrapper svg {
+  stroke: #0084ff !important;
+}
+
+/* Recharts chart legends */
+.light-theme .manager-dashboard .recharts-default-legend,
+.light-theme .manager-dashboard .recharts-legend-item-text,
+.light-theme .finance-dashboard .recharts-default-legend,
+.light-theme .finance-dashboard .recharts-legend-item-text {
+  color: #475569 !important;
+}
+
+/* Dropdowns inside dashboards */
+.light-theme .manager-dashboard select option,
+.light-theme .finance-dashboard select option,
+.light-theme .admin-dashboard select option,
+.light-theme .user-dashboard select option {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+}
+
+/* Finance Dashboard summary table */
+.light-theme .finance-dashboard .summary-table td {
+  color: #0f172a !important;
+}
+
+/* Transfer card and Transfer table card colors */
+.light-theme .transfer-module .transfer-card,
+.light-theme .transfer-module .transfer-table-card.glass-panel {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04) !important;
+}
+
+.light-theme .transfer-module .transfer-card *,
+.light-theme .transfer-module .transfer-table-card.glass-panel *:not(input):not(select):not(option):not(button):not(a) {
+  color: #0f172a !important;
+}
+
+/* Stepper step circles styling in transfer module */
+.light-theme .transfer-module .step-circle {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #64748b !important;
+}
+
+.light-theme .transfer-module .step-item.active .step-circle {
+  border-color: #0084ff !important;
+  color: #0084ff !important;
+  background-color: #e6f0fa !important;
+}
+
+.light-theme .transfer-module .step-item.completed .step-circle {
+  border-color: #22c55e !important;
+  color: #22c55e !important;
+  background-color: #dcfce7 !important;
+}
+
+.light-theme .transfer-module .step-label {
+  color: #64748b !important;
+}
+
+.light-theme .transfer-module .step-item.active .step-label {
+  color: #0084ff !important;
+}
+
+/* Action buttons in Transfer module */
+.light-theme .transfer-module .action-btn.solid-blue,
+.light-theme .transfer-module .action-btn.solid-purple,
+.light-theme .transfer-module .action-btn.solid-purple-dark,
+.light-theme .transfer-module .download-receipt-btn {
+  background-color: #0084ff !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.light-theme .transfer-module .action-btn.solid-blue:hover,
+.light-theme .transfer-module .action-btn.solid-purple:hover,
+.light-theme .transfer-module .action-btn.solid-purple-dark:hover,
+.light-theme .transfer-module .download-receipt-btn:hover {
+  background-color: #0066cc !important;
+  opacity: 1 !important;
+}
+
+/* Login & Signup page submit button styling */
+.light-theme .login-container .submit-button,
+.light-theme .signup-card .submit-button,
+.light-theme .signup-container .submit-button {
+  background-color: #0084ff !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 132, 255, 0.25) !important;
+}
+
+.light-theme .login-container .submit-button:hover,
+.light-theme .signup-card .submit-button:hover,
+.light-theme .signup-container .submit-button:hover {
+  background-color: #0066cc !important;
+  color: #ffffff !important;
+}
+
+

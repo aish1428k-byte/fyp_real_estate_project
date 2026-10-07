@@ -1,0 +1,290 @@
+.login-container {
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.login-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.welcome-section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.welcome-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.welcome-text {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.welcome-decoration {
+  width: 100px;
+  height: 6px;
+  background: var(--color-primary);
+  border-radius: 3px;
+  box-shadow: 0 0 20px var(--color-primary);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  animation: slideUp 0.8s ease-out;
+  position: relative;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-header h2 {
+  font-size: 2rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.login-header p {
+  color: var(--text-muted);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Role Selection */
+.role-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-light);
+  margin-left: 4px;
+}
+
+.role-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.role-button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  color: var(--text-muted);
+}
+
+.role-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.role-button.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  /* Or remove border */
+  color: white;
+  box-shadow: 0 0 15px rgba(11, 143, 243, 0.4);
+}
+
+.role-name {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-light);
+  margin-left: 4px;
+}
+
+.error-message {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+.glass-input.error {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px rgba(244, 63, 94, 0.3);
+}
+
+.submit-button {
+  margin-top: 12px;
+  width: 100%;
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle Role Selection */
+.role-selector-subtle {
+  margin-bottom: 24px;
+}
+
+.role-label-hint {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.role-options-group {
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.role-chip {
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+}
+
+.role-chip input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.role-chip span {
+  display: block;
+  padding: 10px 4px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.role-chip input:checked+span {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(11, 143, 243, 0.3);
+}
+
+.role-chip.admin input:checked+span {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.role-chip:hover span {
+  color: var(--text-main);
+}
+
+@media (max-width: 1024px) {
+  .login-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .welcome-section {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .welcome-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .role-options-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+
+  .welcome-title {
+    font-size: 2.5rem;
+  }
+
+  .login-card {
+    padding: 24px;
+  }
+}

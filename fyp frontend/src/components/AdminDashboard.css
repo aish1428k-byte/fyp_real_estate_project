@@ -1,0 +1,324 @@
+.admin-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background: var(--bg-darker);
+    color: var(--text-main);
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+
+.search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: end;
+}
+
+.search-filters>div {
+    flex: 1;
+    min-width: 220px;
+}
+
+.search-btn {
+    min-width: 120px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Admin Sidebar */
+.admin-sidebar {
+    width: 250px;
+    height: 100vh;
+    flex-shrink: 0;
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.admin-sidebar-header {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.admin-nav {
+    flex: 1;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.admin-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.admin-nav-item:hover {
+    background: var(--sidebar-hover-bg);
+    color: var(--sidebar-hover-text);
+}
+
+.admin-nav-item.active {
+    background: var(--sidebar-active-bg);
+    color: var(--sidebar-active-text);
+    font-weight: 600;
+}
+
+.admin-sidebar-footer {
+    padding: 1.5rem 1rem;
+    border-top: 1px solid var(--border-light);
+}
+
+/* Main Content Area */
+.admin-main {
+    flex: 1;
+    min-width: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Control Center / Filter Bar */
+.admin-control-center {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bg-control-center);
+    backdrop-filter: blur(12px);
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+}
+
+.filter-grid {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.filter-input {
+    background: var(--bg-input);
+    border: 1px solid var(--border-light);
+    border-radius: 0.5rem;
+    padding: 0.6rem 1rem;
+    color: var(--text-main);
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.filter-input:focus {
+    border-color: #3b82f6;
+}
+
+.btn-search {
+    align-self: flex-end;
+    padding: 0.6rem 1.5rem;
+    margin-bottom: 2px;
+}
+
+/* Logs Table */
+.admin-logs-table-container {
+    flex: 1;
+    overflow-x: auto;
+    border-radius: 1rem;
+}
+
+.admin-logs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.admin-logs-table th {
+    background: var(--bg-dark);
+    padding: 1rem;
+    text-align: left;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.admin-logs-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-light);
+
+}
+
+.admin-logs-table tr:hover {
+    background: var(--bg-row-hover);
+}
+
+.admin-logs-table tr.striped {
+    background: var(--bg-row-striped);
+}
+
+.hash-cell {
+    font-family: monospace;
+    color: #3b82f6;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hash-cell:hover {
+    text-decoration: underline;
+}
+
+/* Verification Panel */
+.verification-card {
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    animation: slideUp 0.5s ease-out;
+}
+
+.verification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.status-badge.verified {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+
+.status-badge.tampered {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+.merkle-roots-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.merkle-root-item label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.merkle-root-value {
+    background: var(--bg-merkle);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-family: monospace;
+    font-size: 0.8rem;
+    word-break: break-all;
+}
+
+.blockchain-meta {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.blockchain-meta span b {
+    color: var(--text-main);
+    font-family: monospace;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .admin-sidebar {
+        width: 80px;
+    }
+
+    .admin-sidebar-header span,
+    .admin-nav-item span,
+    .admin-sidebar-footer span {
+        display: none;
+    }
+
+    /* margin-left removed for flex layout */
+
+    .admin-sidebar-header {
+        justify-content: center;
+    }
+
+    .admin-nav-item {
+        justify-content: center;
+    }
+}
+
+/* =========================================================
+   ADMIN LOGS TABLE - LIGHT MODE TEXT FIX
+   ========================================================= */
+
+.light-theme .admin-dashboard .admin-logs-table tbody td {
+    color: #1C2B48 !important;
+}
+
+.light-theme .admin-dashboard .admin-logs-table tbody td.hash-cell {
+    color: #1C2B48 !important;
+}

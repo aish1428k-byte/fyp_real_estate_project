@@ -1,0 +1,287 @@
+.buy-page {
+  padding: 30px;
+  min-height: 100vh;
+}
+
+.buy-page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.property-count {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.search-filters-section {
+  padding: 24px;
+  margin-bottom: 40px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-muted);
+}
+
+.search-bar input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 1rem;
+  outline: none;
+}
+
+.filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.glass-select,
+.glass-input-small {
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.glass-select option {
+  background: var(--bg-card);
+  color: var(--text-main);
+}
+
+.glass-select:focus,
+.glass-input-small:focus {
+  border-color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Grid: 3 equal columns, each card same width ── */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* ── Card: fixed total height so all cards are identical to AgentDescription cards ── */
+.property-card {
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  height: 340px;               /* fixed card height to match AgentDescription cards */
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+}
+
+.property-card:hover {
+  transform: translateY(-6px);
+  background: rgba(30, 41, 59, 0.85);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.55);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ── Image area: 60% of the card height ── */
+.property-image-wrapper {
+  position: relative;
+  height: 60%;
+  flex-shrink: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.property-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.property-card:hover .property-card-image {
+  transform: scale(1.06);
+}
+
+.property-type-pill {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 0.7rem;
+  color: #fff;
+  background: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+/* ── Content area: 40% of the card height ── */
+.property-content-wrapper {
+  height: 40%;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.property-info-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.property-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.property-location {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.property-price-specs-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.property-price {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #10b981; /* Premium green */
+  white-space: nowrap;
+}
+.property-specs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.spec-item:last-child {
+  width: 100%;
+}
+.spec-icon {
+  width: 12px;
+  height: 12px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.view-property-button {
+  width: 100%;
+  margin-top: auto;
+  padding: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 1100px) {
+  .properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .buy-page {
+    padding: 20px;
+  }
+
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .property-card {
+    height: auto;
+  }
+
+  .property-image-wrapper {
+    height: 220px;
+  }
+
+  .property-content-wrapper {
+    height: auto;
+  }
+
+  .filters-row {
+    flex-direction: column;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+}

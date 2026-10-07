@@ -1,0 +1,225 @@
+.add-documents-page {
+    padding: 30px;
+    min-height: 100vh;
+    color: var(--text-main);
+}
+
+.add-documents-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.documents-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    overflow: visible;
+    align-items: start;
+}
+
+.document-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.document-item-wrapper:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-light);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .documents-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.document-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    width: 100%;
+}
+
+.document-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+/* Uploaded Files List Styles */
+.uploaded-files-list {
+    margin: 0 24px 20px 24px;
+    background: var(--bg-input);
+    border-radius: 8px;
+    padding: 5px 15px;
+    border: 1px solid var(--border-light);
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.file-item:last-child {
+    border-bottom: none;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow: hidden;
+}
+
+.file-icon {
+    font-size: 1.2rem;
+}
+
+.file-name {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.file-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.remove-file-btn {
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    /* Red-500 */
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0 5px;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+.remove-file-btn:hover {
+    color: #f87171;
+    /* Red-400 */
+}
+
+/* Buttons */
+.btn-small {
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    min-width: 80px;
+    border: 1px solid var(--border-button);
+    /* Match sketch outline look potentially */
+}
+
+/* Custom Checkbox Styling */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    /* Adjust as needed */
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+    height: 25px;
+    width: 25px;
+    margin: 0;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-input);
+    border-radius: 4px;
+}
+
+.checkbox-container:hover input~.checkmark {
+    background-color: var(--bg-input-focus);
+}
+
+.checkbox-container input:checked~.checkmark {
+    background-color: #0ea5e9;
+    border-color: #0ea5e9;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked~.checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.status-success {
+    color: #4ade80;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.status-scanning {
+    color: #fbbf24;
+    /* Amber-400 */
+    font-weight: 600;
+    font-size: 0.8rem;
+    animation: pulse 1.5s infinite;
+}
+
+.status-error {
+    color: #ef4444;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

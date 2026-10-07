@@ -1,0 +1,650 @@
+BLOCKCHAIN-BACKED REAL ESTATE ERP FRONTEND + BACKEND + BLOCKCHAIN SETUP
+AND RUNNING GUIDE
+
+============================================================ 1. PROJECT
+OVERVIEW ============================================================
+
+This project is a Blockchain-Backed Real Estate ERP.
+
+The project contains three main parts:
+
+1.  Frontend
+    -   React
+    -   Vite
+    -   JavaScript/JSX
+    -   Runs in the browser
+2.  Backend
+    -   Django / Django REST Framework
+    -   Python
+    -   PostgreSQL database
+    -   Handles authentication, properties, documents, leases, finance,
+        escrow, ownership, audit logs, and APIs
+3.  Blockchain
+    -   Ethereum-compatible blockchain
+    -   Smart contracts
+    -   MetaMask is used from the browser for wallet connection
+    -   The current development setup uses Sepolia testnet
+    -   Blockchain transactions require a wallet account and test ETH
+
+IMPORTANT: The exact Python package versions should always be taken from
+the provided backend “requirements.txt” file. The exact frontend package
+versions should always be taken from “package.json” and
+“package-lock.json”.
+
+============================================================ 2. SOFTWARE
+/ TOOLS REQUIRED
+============================================================
+
+Before running the project, install the following:
+
+A. Python - Install Python 3.x. - Recommended: use the same Python
+version that was used during development. - Verify:
+
+       python --version
+
+On some Windows systems:
+
+       py --version
+
+B. Node.js and npm - Install a current LTS version of Node.js. - npm is
+installed with Node.js. - Verify:
+
+       node --version
+       npm --version
+
+C. PostgreSQL - Install PostgreSQL. - Create the database required by
+the Django backend. - Keep the database username and password available
+for the backend environment configuration.
+
+D. Git - Git is optional if the project is provided as a ZIP. - It is
+useful if the project is stored in a Git repository.
+
+E. MetaMask - Install the MetaMask browser extension. - Create/import a
+development wallet. - NEVER share the wallet seed phrase or private key
+with anyone.
+
+F. Sepolia Testnet - The development blockchain setup uses Ethereum
+Sepolia. - MetaMask must be switched to Sepolia. - The development
+wallet needs Sepolia test ETH to send blockchain transactions.
+
+G. IPFS - If the project uses an IPFS provider/service, the required
+provider credentials/API configuration must be added to the backend
+environment file. - If a local IPFS node is used instead, that node must
+be running. - The exact IPFS setup depends on the configuration used by
+the project.
+
+============================================================ 3. PROJECT
+FOLDER STRUCTURE
+============================================================
+
+The final submission should contain the source code approximately like
+this:
+
+    Blockchain-Backed-Real-Estate-ERP/
+    |
+    +-- frontend/
+    |   +-- src/
+    |   +-- public/                 (if present)
+    |   +-- index.html
+    |   +-- package.json
+    |   +-- package-lock.json
+    |   +-- vite.config.js
+    |   +-- README.md
+    |
+    +-- backend/
+    |   +-- manage.py
+    |   +-- requirements.txt
+    |   +-- Django project folder
+    |   +-- property/
+    |   +-- documents/
+    |   +-- lease/
+    |   +-- finance/
+    |   +-- ownership/
+    |   +-- audit/
+    |   +-- other project apps...
+    |   +-- .env.example
+    |
+    +-- blockchain/
+    |   +-- smart contracts / ABI / deployment information
+    |
+    +-- README.md / DEPLOYMENT_GUIDE.md
+
+The exact folder names may be different in the actual project.
+
+============================================================ 4. FRONTEND
+DEPENDENCIES
+============================================================
+
+The frontend is a React/Vite application.
+
+Do NOT manually install every package if package.json is already
+included.
+
+Instead:
+
+1.  Open a terminal.
+
+2.  Go to the frontend folder:
+
+        cd frontend
+
+3.  Install dependencies:
+
+        npm install
+
+npm will read package.json/package-lock.json and install the required
+packages.
+
+To start the frontend:
+
+       npm run dev
+
+Vite will display a local address, normally similar to:
+
+       http://localhost:5173/
+
+Open that address in the browser.
+
+IMPORTANT: Do NOT upload the node_modules folder with the project. It
+can be recreated using:
+
+       npm install
+
+============================================================ 5. BACKEND
+DEPENDENCIES
+============================================================
+
+The backend is a Django/Django REST Framework application.
+
+The important dependency file is:
+
+       requirements.txt
+
+Create and activate a virtual environment first.
+
+Windows:
+
+       cd backend
+       python -m venv venv
+       venv\Scripts\activate
+
+Then install backend dependencies:
+
+       pip install -r requirements.txt
+
+The requirements.txt file is the source of truth for the exact Python
+packages required by this project.
+
+Typical packages may include Django, Django REST Framework, PostgreSQL
+database support, CORS support, JWT/authentication, blockchain/Web3
+libraries, OCR libraries, image/document processing libraries,
+IPFS/client libraries, and other packages used by the project.
+
+Do not add packages just because they are common. Install the packages
+listed in requirements.txt first.
+
+============================================================ 6.
+POSTGRESQL DATABASE SETUP
+============================================================
+
+1.  Install PostgreSQL.
+2.  Create a database for the project.
+3.  Create a PostgreSQL user/password if required.
+4.  Put the correct database information in the backend .env file.
+
+Typical configuration looks like:
+
+    DB_NAME=your_database_name
+    DB_USER=your_database_user
+    DB_PASSWORD=your_database_password
+    DB_HOST=localhost
+    DB_PORT=5432
+
+The actual variable names MUST match the project’s Django settings.
+
+After configuring the database, run:
+
+       python manage.py migrate
+
+This creates the required Django database tables.
+
+If the project has a provided database backup or fixtures, follow the
+project’s specific instructions before creating test data.
+
+============================================================ 7.
+ENVIRONMENT VARIABLES
+============================================================
+
+The real .env file should NOT be shared if it contains secrets.
+
+Create a safe file named:
+
+       .env.example
+
+It should contain placeholders such as:
+
+    SECRET_KEY=your_secret_key
+    DEBUG=True
+
+    DB_NAME=your_database_name
+    DB_USER=your_database_user
+    DB_PASSWORD=your_database_password
+    DB_HOST=localhost
+    DB_PORT=5432
+
+    BLOCKCHAIN_RPC_URL=your_rpc_url
+    CONTRACT_ADDRESS=your_deployed_contract_address
+
+    IPFS_API_KEY=your_ipfs_key
+    IPFS_API_SECRET=your_ipfs_secret
+
+    Other project-specific variables...
+
+IMPORTANT: The exact variable names must match the project’s existing
+settings and code.
+
+Never publish: - MetaMask seed phrase - Wallet private key - API
+secrets - Database passwords - Email passwords - IPFS private
+credentials - Other secret tokens
+
+============================================================ 8. RUNNING
+THE BACKEND ============================================================
+
+After activating the virtual environment:
+
+       cd backend
+
+Activate environment if it is not already active:
+
+       venv\Scripts\activate
+
+Install dependencies:
+
+       pip install -r requirements.txt
+
+Apply database migrations:
+
+       python manage.py migrate
+
+Optional, if the project requires an admin account:
+
+       python manage.py createsuperuser
+
+Start Django:
+
+       python manage.py runserver
+
+The backend normally runs at:
+
+       http://127.0.0.1:8000/
+
+The frontend will call the Django APIs from this server.
+
+============================================================ 9. RUNNING
+THE FRONTEND
+============================================================
+
+Open a SECOND terminal.
+
+Go to the frontend:
+
+       cd frontend
+
+Install packages (first time only):
+
+       npm install
+
+Start React/Vite:
+
+       npm run dev
+
+Open the URL displayed by Vite, normally:
+
+       http://localhost:5173/
+
+============================================================ 10.
+FRONTEND + BACKEND CONNECTION
+============================================================
+
+The frontend must know the backend API URL.
+
+Check the frontend source code for: - .env files - VITE_API_URL - axios
+configuration - fetch configuration - API base URL
+
+The API URL should point to the running Django server.
+
+For example, a development API URL may look like:
+
+       http://127.0.0.1:8000/
+
+The exact URL and environment variable name must match the project.
+
+If the frontend shows network/API errors: 1. Make sure Django is
+running. 2. Check the API base URL. 3. Check CORS settings. 4. Check
+that the correct port is being used.
+
+============================================================ 11.
+BLOCKCHAIN SETUP
+============================================================
+
+The project uses blockchain for important transaction/ownership records.
+
+The current development setup uses Ethereum Sepolia testnet.
+
+Required:
+
+1.  Install MetaMask.
+2.  Create a development wallet.
+3.  Switch MetaMask to Sepolia.
+4.  Obtain Sepolia test ETH from a legitimate Sepolia faucet.
+5.  Make sure the wallet has enough test ETH for contract transactions.
+6.  Make sure the deployed smart contract exists on Sepolia.
+7.  Configure the backend/frontend with the correct contract address and
+    ABI as required by the project.
+
+============================================================ 12. META
+MASK ACCOUNT SETUP
+============================================================
+
+For a new developer/tester:
+
+1.  Install MetaMask.
+2.  Create a new wallet.
+3.  Store the seed phrase safely.
+4.  Never share the seed phrase.
+5.  Switch the network to Sepolia.
+6.  Copy the wallet address.
+7.  Obtain Sepolia test ETH.
+8.  Open the project frontend.
+9.  Click the project’s Connect Wallet / MetaMask button.
+10. MetaMask will ask for permission to connect.
+11. Approve the connection.
+12. The website can now use the connected wallet for supported
+    blockchain operations.
+
+IMPORTANT: Connecting MetaMask does NOT automatically give the website
+access to the user’s private key. The wallet signs blockchain
+transactions through MetaMask.
+
+============================================================ 13.
+BLOCKCHAIN CONTRACT CONFIGURATION
+============================================================
+
+The frontend/backend must know which smart contract is deployed.
+
+Required information normally includes:
+
+    Contract Address
+    ABI
+    Network / Chain ID
+    RPC URL (for backend operations, if used)
+
+For Sepolia, the network chain ID is:
+
+    11155111
+
+The actual deployed contract address must be taken from the project’s
+deployment record/environment configuration.
+
+If the contract was deployed on a different network, the developer must
+use that network instead.
+
+IMPORTANT: Do not assume a contract deployed in Remix VM is available on
+Sepolia. Remix VM is a local/test environment and is different from
+Sepolia.
+
+For a shared development setup, the contract must be deployed on the
+intended network and the project configuration must use the same
+contract address and ABI.
+
+============================================================ 14. HOW THE
+BLOCKCHAIN PART WORKS DURING USE
+============================================================
+
+Typical flow:
+
+    User opens frontend
+          |
+          v
+    User connects MetaMask
+          |
+          v
+    User performs an action
+          |
+          v
+    Frontend requests a blockchain transaction
+          |
+          v
+    MetaMask shows transaction
+          |
+          v
+    User approves/signs transaction
+          |
+          v
+    Transaction is sent to Sepolia
+          |
+          v
+    Smart contract processes transaction
+          |
+          v
+    Transaction hash/record is returned
+          |
+          v
+    Application stores/uses the blockchain reference
+
+Depending on the feature, some blockchain operations may be handled
+through the backend rather than directly through MetaMask.
+
+============================================================ 15. IPFS /
+DOCUMENT STORAGE
+============================================================
+
+If the project uploads verified documents to IPFS:
+
+    Document
+       |
+       v
+    OCR / Validation
+       |
+       v
+    IPFS Upload
+       |
+       v
+    IPFS CID / Hash
+       |
+       v
+    Store reference in database / blockchain as designed
+
+The IPFS credentials/provider configuration must be available in the
+backend environment.
+
+The exact provider and variables should be taken from the project’s
+existing code and .env configuration.
+
+Do not share real API secrets in a public repository.
+
+============================================================ 16.
+RECOMMENDED STARTUP ORDER
+============================================================
+
+For a fresh machine, use this order:
+
+STEP 1: Start PostgreSQL.
+
+STEP 2: Prepare the backend .env configuration.
+
+STEP 3: Create and activate Python virtual environment.
+
+STEP 4: Install backend dependencies:
+
+       pip install -r requirements.txt
+
+STEP 5: Run migrations:
+
+       python manage.py migrate
+
+STEP 6: Start Django:
+
+       python manage.py runserver
+
+STEP 7: Prepare MetaMask. - Sepolia network - Development wallet -
+Sepolia test ETH
+
+STEP 8: Make sure the correct smart contract address and ABI are
+configured.
+
+STEP 9: Open a second terminal.
+
+STEP 10: Go to frontend and install dependencies:
+
+       npm install
+
+STEP 11: Start frontend:
+
+       npm run dev
+
+STEP 12: Open the Vite URL.
+
+STEP 13: Log in/register as required by the project.
+
+STEP 14: Connect MetaMask when a blockchain feature requires it.
+
+STEP 15: Test the complete application flow.
+
+============================================================ 17. BASIC
+TESTING FLOW
+============================================================
+
+After everything starts, test:
+
+1.  Open frontend.
+2.  Register/login.
+3.  Create/view a property.
+4.  Test buyer/seller/agent roles as applicable.
+5.  Upload a document.
+6.  Test OCR/document verification.
+7.  Test lease/document functionality if required.
+8.  Create/test escrow.
+9.  Test installment/payment flow.
+10. Check transaction records.
+11. Test seller release request.
+12. Test approval flow.
+13. Connect MetaMask.
+14. Test a blockchain transaction.
+15. Check transaction hash on Sepolia explorer if applicable.
+16. Test ownership transfer after required conditions.
+17. Check audit logs.
+
+============================================================ 18. COMMON
+ERRORS AND BASIC FIXES
+============================================================
+
+ERROR: “ModuleNotFoundError”
+
+Fix: Activate venv and run:
+
+       pip install -r requirements.txt
+
+ERROR: “npm module/package not found”
+
+Fix:
+
+       npm install
+
+ERROR: Database connection error
+
+Check: - PostgreSQL is running - Database exists - DB username/password
+are correct - DB host/port are correct - .env variable names match
+Django settings
+
+ERROR: Frontend cannot reach backend
+
+Check: - Django server is running - API URL is correct - CORS
+configuration is correct - Correct ports are being used
+
+ERROR: MetaMask does not connect
+
+Check: - MetaMask extension is installed - Wallet is unlocked - Correct
+browser account is selected - Correct network is selected - Website has
+permission to connect
+
+ERROR: Blockchain transaction fails
+
+Check: - Correct Sepolia network - Wallet has Sepolia test ETH -
+Contract address is correct - ABI matches deployed contract - Contract
+is deployed on the selected network - User is using the expected
+wallet/account
+
+ERROR: Contract cannot be found
+
+Check: - The contract was not only deployed to Remix VM - The contract
+was deployed on Sepolia if Sepolia is configured - The frontend/backend
+uses the Sepolia contract address - The ABI is from the same contract
+version
+
+============================================================ 19. WHAT
+SHOULD NOT BE INCLUDED IN THE SUBMISSION
+============================================================
+
+Do NOT upload:
+
+-   venv/
+-   node_modules/
+-   .git/
+-   pycache/
+-   dist/ (unless specifically requested)
+-   Real .env files containing secrets
+-   Private keys
+-   MetaMask seed phrases
+-   Passwords
+-   Private API credentials
+
+These can be recreated/configured on the new machine.
+
+============================================================ 20. WHAT
+SHOULD BE INCLUDED
+============================================================
+
+Include:
+
+FRONTEND: - src/ - public/ if used - index.html - package.json -
+package-lock.json - vite.config.js - README.md if available
+
+BACKEND: - All Django apps - Django project/settings - manage.py -
+requirements.txt - migration files - project documentation -
+.env.example
+
+BLOCKCHAIN: - Smart contract source code - ABI files if used -
+deployment information - contract address - network information
+
+DOCUMENTATION: - README.md - DEPLOYMENT_GUIDE.md - This setup guide
+
+============================================================ 21.
+IMPORTANT NOTE FOR UNIVERSITY SUBMISSION
+============================================================
+
+The university should receive the source code and dependency files, not
+the developer’s private credentials.
+
+A new machine should be able to reproduce the environment by:
+
+1.  Installing Python
+2.  Installing Node.js
+3.  Installing PostgreSQL
+4.  Installing MetaMask
+5.  Creating/configuring the database
+6.  Creating .env from .env.example
+7.  Running pip install -r requirements.txt
+8.  Running npm install
+9.  Running migrations
+10. Starting Django
+11. Starting React/Vite
+12. Connecting MetaMask to Sepolia
+13. Using the configured smart contract
+
+The exact contract address, ABI, API URLs, database variables, and IPFS
+variables must be taken from the project’s actual configuration before
+final submission.
+
+============================================================ END OF
+GUIDE ============================================================

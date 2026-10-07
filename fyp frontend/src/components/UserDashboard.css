@@ -1,0 +1,130 @@
+.user-dashboard {
+  flex: 1;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.dashboard-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.dashboard-header p {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+.dashboard-card {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  justify-content: flex-start;
+  margin-bottom: 0 !important;
+  height: 100%;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  transition: var(--transition-normal);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.card-icon-wrapper svg {
+  width: 40px;
+  height: 40px;
+  stroke-width: 1.5;
+}
+
+.buy-icon {
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.1);
+}
+
+.sell-icon {
+  color: #f43f5e;
+  background: rgba(244, 63, 94, 0.1);
+}
+
+.agent-icon {
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.1);
+}
+
+.dashboard-card:hover .buy-icon {
+  background: rgba(96, 165, 250, 0.2);
+  transform: scale(1.1);
+}
+
+.dashboard-card:hover .sell-icon {
+  background: rgba(244, 63, 94, 0.2);
+  transform: scale(1.1);
+}
+
+.dashboard-card:hover .agent-icon {
+  background: rgba(167, 139, 250, 0.2);
+  transform: scale(1.1);
+}
+
+.dashboard-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.dashboard-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .dashboard-card {
+    padding: 30px;
+  }
+}

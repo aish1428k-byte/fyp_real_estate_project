@@ -1,0 +1,140 @@
+.manager-dashboard {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.manager-dashboard .dashboard-header {
+    margin-bottom: 60px;
+}
+
+.manager-dashboard .dashboard-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.manager-dashboard .dashboard-header p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.manager-dashboard .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.manager-dashboard .dashboard-card {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 100%;
+    min-height: 280px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.manager-dashboard .dashboard-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.manager-dashboard .card-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.manager-dashboard .dashboard-card:hover .card-icon-wrapper {
+    transform: scale(1.1);
+}
+
+.manager-dashboard .card-icon-wrapper svg {
+    width: 40px;
+    height: 40px;
+}
+
+.manager-dashboard .users-icon {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.manager-dashboard .agents-icon {
+    color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.manager-dashboard .properties-icon {
+    color: #0ea5e9;
+    background: rgba(14, 165, 233, 0.1);
+}
+
+.manager-dashboard .reports-icon {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.manager-dashboard .dashboard-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.manager-dashboard .dashboard-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.status-pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.status-pill.completed {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.status-pill.in_progress {
+  background: rgba(35, 156, 236, 0.2);
+  color: #1371ec;
+}
+
+
+.status-pill.pending {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.status-pill.cancelled {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+@media (max-width: 768px) {
+    .manager-dashboard {
+        padding: 20px;
+    }
+
+    .manager-dashboard .dashboard-header h1 {
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,214 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background: var(--bg-modal);
+    /* Dark refined background */
+    border: 1px solid var(--border-modal);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 800px;
+    max-height: 85vh;
+    /* Crucial for preventing overflow */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10001;
+    animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ... animations ... */
+
+.modal-header {
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border-modal);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    /* Clean up */
+    border-radius: 16px 16px 0 0;
+    flex-shrink: 0;
+    /* Keep header visible */
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-main);
+    /* Use text main instead of fixed gradient */
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+.modal-close-button {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.modal-close-button:hover {
+    color: var(--text-main);
+    background: var(--bg-card-hover);
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 32px;
+    overflow-y: auto;
+    flex: 1;
+    /* Take remaining height */
+}
+
+/* Scrollbar Styling */
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--bg-input);
+    border: 1px solid var(--border-input);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: var(--bg-input-focus);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.modal-actions {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cancel-button {
+    padding: 12px 24px;
+    background: transparent;
+    border: 1px solid var(--border-button);
+    color: var(--text-button);
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancel-button:hover {
+    background: var(--bg-button-hover);
+    border-color: var(--border-button);
+    color: var(--text-main);
+}
+
+.add-button,
+.btn-primary {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+    border: none;
+    color: white !important;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+.add-button:hover,
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+    filter: brightness(110%);
+}
+
+/* Table Styles Override for Modals */
+.modal-body .meetings-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.modal-body .meetings-table th {
+    background: var(--bg-card-hover);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    padding: 16px;
+    text-align: left;
+}
+
+.modal-body .meetings-table td {
+    padding: 16px;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.modal-body .meetings-table tr:hover td {
+    background: var(--bg-card-hover);
+}
+
+/* Dashboard Grid inside Modal (TaskProgress) */
+.modal-body .dashboard-grid {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}

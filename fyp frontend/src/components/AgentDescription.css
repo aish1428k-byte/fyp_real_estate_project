@@ -1,0 +1,594 @@
+/* =========================================================
+   AGENT DESCRIPTION PAGE
+   ========================================================= */
+
+.agent-description-page {
+  padding: 40px;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.agent-page-header {
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px;
+  border-radius: 20px;
+
+  /* DARK MODE - ORIGINAL */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.agent-page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.agent-page-header p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   AGENT CARD
+   ========================================================= */
+
+.agent-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 28px 24px 24px;
+
+  background: var(--bg-card);
+
+  /* DARK MODE - ORIGINAL */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 16px;
+
+  transition: all 0.25s ease;
+
+  height: 340px;
+
+  box-sizing: border-box;
+}
+
+.agent-card:hover {
+  /* DARK MODE - ORIGINAL */
+  background: rgba(255, 255, 255, 0.03);
+
+  border-color: var(--color-primary);
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 16px 40px -10px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   AGENT IMAGE
+   ========================================================= */
+
+.agent-image-wrapper {
+  width: 88px;
+  height: 88px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+
+  margin-bottom: 16px;
+
+  /* DARK MODE - ORIGINAL */
+  border: 3px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.agent-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.agent-overlay {
+  display: none;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.agent-content {
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+
+  width: 100%;
+
+  min-height: 0;
+}
+
+
+/* =========================================================
+   AGENT HEADER
+   ========================================================= */
+
+.agent-header {
+  margin-bottom: 6px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 3px;
+}
+
+
+/* =========================================================
+   NAME
+   ========================================================= */
+
+.agent-name {
+  font-size: 1.05rem;
+
+  font-weight: 700;
+
+  color: var(--text-main);
+
+  margin: 0;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   ROLE
+   ========================================================= */
+
+.agent-role {
+  font-size: 0.78rem;
+
+  color: var(--color-primary);
+
+  margin: 0;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+.agent-phone {
+  font-size: 0.78rem;
+
+  color: var(--text-muted);
+
+  margin: 2px 0 0;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.divider {
+  height: 1px;
+
+  /* DARK MODE - ORIGINAL */
+  background: rgba(255, 255, 255, 0.07);
+
+  width: 100%;
+
+  margin: 8px 0;
+}
+
+
+/* =========================================================
+   BIO
+   ========================================================= */
+
+.agent-bio {
+  font-size: 0.78rem;
+
+  color: var(--text-muted);
+
+  margin: 0 0 8px;
+
+  line-height: 1.4;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SPECIALTIES
+   ========================================================= */
+
+.agent-specialties {
+  margin-top: 8px;
+}
+
+.agent-specialties h3 {
+  display: none;
+}
+
+.specialty-pills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   SPECIALTY PILL
+   ========================================================= */
+
+.specialty-pill {
+  padding: 2px 8px;
+
+  /* DARK MODE - ORIGINAL */
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid var(--border-light);
+
+  border-radius: 4px;
+
+  font-size: 0.7rem;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   CARD HOVER - SPECIALTY
+   ========================================================= */
+
+.agent-card:hover .specialty-pill {
+  /* DARK MODE - ORIGINAL */
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: rgba(255, 255, 255, 0.2);
+
+  color: var(--text-main);
+}
+
+
+/* =========================================================
+   VIEW MEETINGS BUTTON
+   ========================================================= */
+
+.btn-view-meetings {
+  margin-top: auto !important;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   =========================================================
+   LIGHT MODE
+   =========================================================
+   Palette:
+   
+   #E8ECEF = Platinum
+   #C4D8E5 = Light Blue Grey
+   #A7C7E7 = Baby Blue Eyes
+   #8EB1D1 = Cool Cerulean
+   #1C2B48 = Midnight Blue
+   =========================================================
+   ========================================================= */
+
+
+/* =========================================================
+   LIGHT MODE - PAGE
+   ========================================================= */
+
+.light-theme .agent-description-page {
+  background: #E8ECEF;
+
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE - PAGE HEADER
+   ========================================================= */
+
+.light-theme .agent-page-header {
+  background: #C4D8E5;
+
+  border: 1px solid #8EB1D1;
+
+  box-shadow:
+    0 8px 24px rgba(28, 43, 72, 0.10);
+}
+
+.light-theme .agent-page-header h1 {
+  color: #1C2B48;
+}
+
+.light-theme .agent-page-header p {
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE - AGENT CARD
+   ========================================================= */
+
+.light-theme .agent-card {
+  background: #A7C7E7;
+
+  border: 1px solid #8EB1D1;
+
+  color: #1C2B48;
+
+  box-shadow:
+    0 6px 18px rgba(28, 43, 72, 0.10);
+}
+
+
+/* =========================================================
+   LIGHT MODE - CARD HOVER
+   ========================================================= */
+
+.light-theme .agent-card:hover {
+  background: #C4D8E5;
+
+  border-color: #8EB1D1;
+
+  box-shadow:
+    0 16px 35px rgba(28, 43, 72, 0.18);
+}
+
+
+/* =========================================================
+   LIGHT MODE - IMAGE WRAPPER
+   ========================================================= */
+
+.light-theme .agent-image-wrapper {
+  border: 3px solid #8EB1D1;
+
+  background: #C4D8E5;
+
+  box-shadow:
+    0 4px 12px rgba(28, 43, 72, 0.12);
+}
+
+
+/* =========================================================
+   LIGHT MODE - NAME
+   ========================================================= */
+
+.light-theme .agent-name {
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE - ROLE
+   ========================================================= */
+
+.light-theme .agent-role {
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE - PHONE
+   ========================================================= */
+
+.light-theme .agent-phone {
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE - DIVIDER
+   ========================================================= */
+
+.light-theme .divider {
+  background: #8EB1D1;
+}
+
+
+/* =========================================================
+   LIGHT MODE - BIO
+   ========================================================= */
+
+.light-theme .agent-bio {
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE - SPECIALTY PILL
+   ========================================================= */
+
+.light-theme .specialty-pill {
+  background: #C4D8E5;
+
+  border: 1px solid #8EB1D1;
+
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE - SPECIALTY HOVER
+   ========================================================= */
+
+.light-theme .agent-card:hover .specialty-pill {
+  background: #A7C7E7;
+
+  border-color: #8EB1D1;
+
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE - VIEW MEETINGS BUTTON
+   ========================================================= */
+
+.light-theme .btn-view-meetings {
+  background:
+    linear-gradient(
+      135deg,
+      #8EB1D1,
+      #A7C7E7
+    );
+
+  color: #1C2B48;
+
+  border: 1px solid #8EB1D1;
+
+  box-shadow:
+    0 4px 10px rgba(28, 43, 72, 0.12);
+}
+
+.light-theme .btn-view-meetings:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #A7C7E7,
+      #8EB1D1
+    );
+
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   LIGHT MODE - GENERAL TEXT INSIDE AGENT PAGE
+   ========================================================= */
+
+.light-theme .agent-description-page h1,
+.light-theme .agent-description-page h2,
+.light-theme .agent-description-page h3,
+.light-theme .agent-description-page h4,
+.light-theme .agent-description-page h5,
+.light-theme .agent-description-page h6 {
+  color: #1C2B48;
+}
+
+.light-theme .agent-description-page p,
+.light-theme .agent-description-page span,
+.light-theme .agent-description-page label {
+  color: #1C2B48;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .agents-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 600px) {
+  .agents-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-card {
+    height: auto;
+
+    padding: 24px 20px 20px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .agent-description-page {
+    padding: 20px;
+
+    padding-bottom: 100px;
+  }
+
+  .agent-page-header {
+    padding: 24px;
+
+    margin-bottom: 30px;
+  }
+
+  .agent-page-header h1 {
+    font-size: 1.8rem;
+  }
+}

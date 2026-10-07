@@ -1,0 +1,797 @@
+.agent-task-details {
+  padding: 30px;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.task-details-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+/* =========================================
+   TASK HEADER ACTION BUTTONS
+========================================= */
+
+.task-header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+
+/* Common button style */
+
+.task-action-btn {
+  height: 42px;
+  min-width: 140px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0 18px;
+
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 8px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.18),
+    rgba(99, 102, 241, 0.18)
+  );
+
+  color: #e2e8f0;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Button icons */
+
+.task-action-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+
+/* Hover */
+
+.task-action-btn:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.30),
+    rgba(99, 102, 241, 0.30)
+  );
+
+  border-color: rgba(99, 102, 241, 0.65);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.15);
+}
+
+
+/* Disabled */
+
+.task-action-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* Escrow completed */
+
+.task-action-btn.completed {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #6ee7b7;
+}
+
+/* =========================================================
+   INSTALLMENT CARD
+========================================================= */
+
+.installment-card {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+
+  align-items: center !important;
+  justify-content: flex-start !important;
+
+  gap: 8px;
+
+  width: 400px !important;
+  min-width: 400px !important;
+  max-width: 400px !important;
+
+  height: 54px !important;
+  min-height: 54px !important;
+
+  padding: 6px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+
+  background: var(--bg-opaque-slate-mid);
+
+  flex: 0 0 400px !important;
+
+  overflow: visible !important;
+}
+
+
+/* =========================================================
+   INSTALLMENT COUNT INPUT
+========================================================= */
+
+.installment-card input {
+  display: block !important;
+
+  width: 190px !important;
+  min-width: 190px !important;
+  max-width: 190px !important;
+
+  height: 40px !important;
+  min-height: 40px !important;
+
+  flex: 0 0 190px !important;
+
+  box-sizing: border-box;
+
+  padding: 0 12px;
+
+  border: 1px solid var(--border-input);
+  border-radius: 7px;
+
+  background: var(--bg-input);
+
+  color: var(--text-main);
+
+  outline: none;
+
+  font-size: 13px;
+}
+
+.installment-card input::placeholder {
+  color: #94a3b8;
+}
+
+.installment-card input:focus {
+  border-color: rgba(99, 102, 241, 0.7);
+
+  box-shadow:
+    0 0 0 2px rgba(99, 102, 241, 0.10);
+}
+
+
+/* =========================================================
+   CREATE INSTALLMENT PLAN BUTTON
+========================================================= */
+
+.installment-card .btn-create-installment {
+  display: inline-flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 190px !important;
+  min-width: 190px !important;
+  max-width: 190px !important;
+
+  height: 40px !important;
+  min-height: 40px !important;
+
+  flex: 0 0 190px !important;
+
+  box-sizing: border-box;
+
+  padding: 0 14px;
+
+  border: 1px solid rgba(99, 102, 241, 0.35);
+
+  border-radius: 8px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.22),
+    rgba(99, 102, 241, 0.22)
+  );
+
+  color: #e2e8f0;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  overflow: visible;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.installment-card .btn-create-installment:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.32),
+    rgba(99, 102, 241, 0.32)
+  );
+
+  border-color: rgba(99, 102, 241, 0.65);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 15px rgba(59, 130, 246, 0.15);
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.installment-card .btn-create-installment:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.installment-card .btn-create-installment:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+.task-details-header {
+  margin-bottom: 30px;
+}
+
+/* Main Layout - Stacks Vertically */
+.details-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* Card Styles */
+.details-card {
+  padding: 0;
+  overflow: hidden;
+  background: var(--bg-opaque-slate-light);
+  /* Darker glass */
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.details-card h2 {
+  background: var(--bg-dark);
+  /* Dark header bar */
+  margin: 0;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.details-content {
+  padding: 24px;
+  gap: 16px;
+}
+
+/* Generic Detail Item */
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  /* Default small screens */
+  gap: 4px;
+}
+
+.detail-label {
+  color: #94a3b8;
+  /* Muted text for labels */
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-value {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Owner & Buyer Cards - Horizontal Layout */
+.owner-card .details-content,
+.buyer-card .details-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.owner-card .detail-item,
+.buyer-card .detail-item {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.owner-card .detail-label,
+.buyer-card .detail-label {
+  margin-bottom: 0;
+  color: #94a3b8;
+}
+
+/* Property Card - Grid Layout due to many items */
+.property-card .details-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.property-card .detail-item.full-width {
+  grid-column: 1 / -1;
+  width: 100%;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+
+.status-pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-pill.completed {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.status-pill.in_progress {
+  background: rgba(35, 156, 236, 0.2);
+  color: #1371ec;
+}
+
+
+.status-pill.pending {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.status-pill.cancelled {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.detail-description {
+  color: #cbd5e1;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* Feature Pills */
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.feature-pill-small {
+  background: rgba(14, 165, 233, 0.15);
+  /* Sky blue tint */
+  color: #38bdf8;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Meeting Details Section */
+.meetings-section {
+  margin-top: 40px;
+}
+
+.meetings-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* Meetings Table - Dark Theme */
+.meetings-table-container {
+  overflow-x: auto;
+  overflow-y: visible;
+  background: var(--bg-opaque-slate-light);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+}
+
+.meetings-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.meetings-table td {
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.meetings-table td:nth-child(2) {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  min-width: 500px;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.meetings-table th {
+  padding: 18px 24px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  background: rgba(30, 41, 59, 0.5);
+  /* Slightly darker header */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.meetings-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Action Buttons */
+.action-button.edit {
+  background: transparent;
+  border: 1px solid #0ea5e9;
+  /* Blue border */
+  color: #0ea5e9;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.action-button.edit:hover {
+  background: rgba(14, 165, 233, 0.1);
+  /* Blue glow on hover */
+}
+
+/* Edit Form Styles */
+.edit-meeting-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edit-details-input {
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: white;
+  resize: vertical;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.save-button {
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #cbd5e1;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .owner-card .details-content,
+  .buyer-card .details-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Modal Overlay */
+.document-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.document-modal-content {
+  background: var(--bg-modal);
+  border: 1px solid var(--border-modal);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+.modal-close-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.task-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-header-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn-create-meeting {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.2);
+}
+
+.btn-create-meeting:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.3);
+  filter: brightness(1.1);
+}
+
+.btn-create-meeting svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-add-doc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.btn-add-doc:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+  filter: brightness(1.1);
+}
+
+.btn-add-doc svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-proceed {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #667eea,
+    #764ba2
+  );
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 8px 20px rgba(
+      102,
+      126,
+      234,
+      0.35
+    );
+}
+
+.btn-proceed:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 12px 24px rgba(
+      102,
+      126,
+      234,
+      0.45
+    );
+}
+.btn-proceed:disabled {
+
+  background: #9ca3af;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+
+  transform: none;
+
+  opacity: 0.8;
+}
+.btn-proceed.completed {
+  background:
+    linear-gradient(
+      135deg,
+      #10b981,
+      #059669
+    );
+}
+
+.installment-card {
+  background: var(--bg-opaque-slate-dark);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 200px;
+  max-width: 250px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.installment-card input {
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.installment-card input:focus {
+  border-color: #3b82f6;
+}
+
+.btn-create-installment {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-create-installment:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+}

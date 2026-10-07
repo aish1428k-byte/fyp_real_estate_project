@@ -1,0 +1,23 @@
+# Frontend
+fyp frontend/node_modules/
+fyp frontend/dist/
+# Backend
+backend/venv/
+backend/env/
+backend/__pycache__/
+backend/**/__pycache__/
+# Environment variables
+.env
+backend/.env
+frontend/.env
+# Python
+*.pyc
+
+# Database
+*.sqlite3
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
